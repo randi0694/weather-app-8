@@ -65,11 +65,10 @@ function displayForecast() {
               <div class="weather-forecast-icon"></div>
 
               <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-max">
+                <div class="weather-forecast-max">
                  <strong>18°</strong>
-                 </span>
-                <span class="weather-forecast-min">
-                12°</span>
+                 </div>
+                <div class="weather-forecast-min">12°</div>
               </div>
             </div>
           </div>
