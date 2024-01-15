@@ -50,7 +50,13 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "da33a000ca8e72aof6tc393eb0ce9944";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHtml = "";
 
@@ -83,4 +89,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Nassau");
-displayForecast();
+getForecast("Nassau");
