@@ -68,21 +68,19 @@ function displayForecast(response) {
     forecastHtml =
       forecastHtml +
       `
-
-
-            <div class=weather-forecast-day">
-              <div class="weather-forecast-date">${day}</div>
-              <div class="weather-forecast-icon"></div>
-              <div class="weather-forecast-temperatures">
-                <div class="weather-forecast-max">
-                 <strong>18°</strong>
-                 </div>
-                <div class="weather-forecast-min">12°</div>
-              </div>
-            </div>
-        
-        `;
+      <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">🌤️</div>
+        <div class="weather-forecast-temperatures">
+          <div class="weather-forecast-temperature">
+            <strong>18º</strong>
+          </div>
+          <div class="weather-forecast-temperature">15º</div>
+        </div>
+      </div>
+    `;
   });
+
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
