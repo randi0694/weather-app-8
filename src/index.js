@@ -56,12 +56,12 @@ function displayForecast() {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
 let forecastHtml = "";
 
-  days.forEach(function(day)){
+  days.forEach(function (day) ) {
   forecastHtml = 
   forecastHtml + `
 <div class="row">
             <div class="col-2">
-              <div class="weather-forecast-date">${day}</div>
+              <div class="weather-forecast-date">${days}</div>
               <div class="weather-forecast-icon"></div>
 
               <div class="weather-forecast-temperatures">
