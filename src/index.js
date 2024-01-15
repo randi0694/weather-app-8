@@ -51,8 +51,6 @@ function handleSearchSubmit(event) {
 }
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHtml = "";
 
@@ -67,15 +65,18 @@ function displayForecast() {
               <div class="weather-forecast-icon"></div>
 
               <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-max"> 18°</span>
-                <span class="weather-forecast-min">12°</span>
+                <span class="weather-forecast-max">
+                 <strong>18°</strong>
+                 </span>
+                <span class="weather-forecast-min">
+                12°</span>
               </div>
             </div>
           </div>
         
         `;
   });
-
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
