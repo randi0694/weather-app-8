@@ -16,6 +16,8 @@ function refreshWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
+
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -52,11 +54,13 @@ function handleSearchSubmit(event) {
 
 function getForecast(city) {
   let apiKey = "da33a000ca8e72aof6tc393eb0ce9944";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
   axios(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHtml = "";
 
@@ -69,7 +73,6 @@ function displayForecast(response) {
             <div class=weather-forecast-day">
               <div class="weather-forecast-date">${day}</div>
               <div class="weather-forecast-icon"></div>
-
               <div class="weather-forecast-temperatures">
                 <div class="weather-forecast-max">
                  <strong>18°</strong>
@@ -77,7 +80,6 @@ function displayForecast(response) {
                 <div class="weather-forecast-min">12°</div>
               </div>
             </div>
-          </div>
         
         `;
   });
@@ -89,4 +91,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Nassau");
-getForecast("Nassau");
